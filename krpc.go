@@ -563,8 +563,8 @@ func handleRequest(dht *DHT, addr *net.UDPAddr,
 		}
 
 		var impliedPort int
-		if impliedPort, ok := a["implied_port"]; ok &&
-			impliedPort.(int) != 0 {
+		if impliedPortValue, ok := a["implied_port"]; ok &&
+			impliedPortValue.(int) != 0 {
 
 			port = addr.Port
 		}
