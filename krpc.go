@@ -567,6 +567,7 @@ func handleRequest(dht *DHT, addr *net.UDPAddr,
 			impliedPortValue.(int) != 0 {
 
 			port = addr.Port
+			impliedPort = impliedPortValue.(int)
 		}
 
 		if dht.IsStandardMode() {
