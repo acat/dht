@@ -55,7 +55,7 @@ type Config struct {
 	// callback when receive get_peers response
 	OnGetPeersResponse func(string, *Peer)
 	// callback when got announce_peer request
-	OnAnnouncePeer func(string, string, int)
+	OnAnnouncePeer func(string, string, int, int)
 	// blcoked ips
 	BlockedIPs []string
 	// blacklist size

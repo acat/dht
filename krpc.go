@@ -562,6 +562,7 @@ func handleRequest(dht *DHT, addr *net.UDPAddr,
 			return
 		}
 
+		var impliedPort int
 		if impliedPort, ok := a["implied_port"]; ok &&
 			impliedPort.(int) != 0 {
 
@@ -577,7 +578,7 @@ func handleRequest(dht *DHT, addr *net.UDPAddr,
 		}
 
 		if dht.OnAnnouncePeer != nil {
-			dht.OnAnnouncePeer(infoHash, addr.IP.String(), port)
+			dht.OnAnnouncePeer(infoHash, addr.IP.String(), port, impliedPort)
 		}
 	default:
 		//		send(dht, addr, makeError(t, protocolError, "invalid q"))
